@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            -webkit-perspective: 300;
+        }
+        .chars{
+            color: white;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            font-size: 54px;
+            font-weight: 900;
+            font-style: italic;
+            opacity: 0;
+            margin: 0 10px;
+        }
+        .ll{
+            position: absolute;
+            margin-left: -240px;
+            width: 60px;
+            height: 60px;
+            border-radius: 3px;
+            opacity: 0;
+
+        }
+        .T{
+            border: 4px solid rgb(49,3,109);
+            animation:tmove linear 2s forwards;
+        }
+        .U{
+            border:4px solid rgb(121,70,106);
+            animation:umove linear 2s forwards;
+            animation-delay: 0.1s;
+        }
+        .pcov{
+            position: absolute;
+            width: 4px;
+            height: 60px;
+            background-color: rgb(223,15,15);
+            opacity: 0;
+            animation: showd forwards;
+            animation-delay: 2.3s;
+        }
+        @keyframes showd{
+            from{
+                opacity: 0;
+            }
+            to{
+                transform: scale(1,2);
+                opacity: 1;
+            }
+        }
+        .D{
+            border: 4px solid rgb(223,15,15);
+            animation: dmove linear 2s forwards;
+
+            animation-delay: 0.3s;
+        }
+        .S1{
+            border: 4px solid rgb(49,3,109);
+            animation: amove linear 2s forwards;
+            animation-delay: 0.6s;
+        }
+        .S2{
+            border:4px solid rgb(121,70,106);
+            animation:nmove linear 2s forwards;
+        }
+       
+        @keyframes amove{
+            30%{
+                opacity: 1;
+                transform: translate(30px) rotateY(135deg) scale(1.1,1.1);
+            }
+            60%{
+                transform: translate(50px) rotateY(45deg) scale(1.1,1.1);
+            }
+            85%{
+                transform: translate(80px) rotateY(103deg) scale(1.2,1.2);
+            }
+            100%{
+                opacity: 1;
+                z-index: -99;
+                transform: translate(80px) rotateY(77deg) scale(1.2,1.2);
+            }
+        }
+        @keyframes nmove{
+            30%{
+                opacity: 1;
+                transform: translate(60px) rotateY(135deg) scale(1.2,1.2);
+            }
+            60%{
+                transform: translate(120px) rotateY(45deg) scale(1.3,1.3);
+             }
+            85%{
+                transform: translate(160px) rotateY(103deg) scale(1.3,1.3);
+            }
+            100%{
+                opacity: 1;
+                transform: translate(164px) rotateY(77deg) scale(1.3,1.3);
+            }
+        }
+        @keyframes dmove{
+            30%{
+                opacity: 1;
+                transform: translate(60px) rotateY(135deg) scale(1.2,1.2);
+            }
+            60%{
+                transform: translate(120px) rotateY(45deg) scale(1.4,1.4);
+            }
+            85%{
+                transform: translate(240px) rotateY(135deg) scale(1.6,1.6);
+            }
+            100%{
+                opacity: 1;
+                transform: translate(240px) rotateY(90deg) scale(1.6,1.6);
+            }
+        }
+        @keyframes tmove{
+            33%{
+                opacity: 1;
+                transform: translate(80px) rotateY(135deg) scale(1.2,1.2);
+            }
+            66%{
+                transform: translate(240px) rotateY(45deg) scale(1.6,1.6);
+            }
+            95%{
+                transform: translate(390px) rotateY(135deg) scale(1.2,1.2);
+            }
+            100%{
+                opacity: 1;
+                transform: translate(402px) rotateY(103deg) scale(1.2,1.2);
+            }
+        }
+        @keyframes umove{
+            33%{
+                opacity: 1;
+                transform: translate(80px) rotateY(135deg) scale(1.2,1.2);
+            }
+            66%{
+                transform: translate(240px) rotateY(45deg) scale(1.6,1.6);
+            }
+            95%{
+                transform: translate(320px) rotateY(100deg) scale(1.4,1.4);
+            }
+            100%{
+                opacity: 1;
+                transform: translate(320px) rotateY(103deg) scale(1.3,1.3);
+            }
+        }
+        @keyframes show1{
+            0%{
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+            100%{
+                opacity: 1;
+                transform: rotateY(360deg);
+            }
+        }
+        @keyframes show2 {
+            0%{
+                opacity: 1;
+                transform: rotateY(90deg);
+            }
+            100%{
+                opacity: 1;
+                transform: rotateY(360deg);
+            }
+        }
+        #box div:nth-child(1){
+            animation: show1 1.2s linear forwards;
+            animation-iteration-count: 2;
+            animation-delay: 0.2s;
+        }
+        #box div:nth-child(2){
+            animation: show2 1s linear 1 forwards;
+            animation-delay: 0.4s;
+        }
+        #box div:nth-child(3){
+            animation: show2 1s linear 1 forwards;
+            animation-delay: 0.6s;
+
+        }
+        #box div:nth-child(4){
+            animation: show2 1s linear 1 forwards;
+            animation-delay: 0.8s;
+
+        }
+        #box div:nth-child(5){
+            animation: show2 1.2s linear 1 forwards;
+            animation-delay: 1s;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="chars">S</div>
+        <div class="chars">S</div>
+        <div class="chars">D</div>
+        <div class="chars">U</div>
+        <div class="chars">T</div>
+        <div class="ll S1"></div>
+        <div class="ll S2"></div>
+        <div class="ll D"></div>
+        <div class="ll U"></div>
+        <div class="ll T"></div>
+        <div class="pcov"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ province }}{{ city }}二手房数据爬取</title>
+</head>
+<img>
+{#{% for elem in list %}#}
+{#    {{ elem }}#}
+{#{% endfor %}#}
+{#{{ list.1 }}{{ list.2 }}#}
+{#{{ list }}#}
+{#{{ csvfile }}#}
+<h1 align="center"><a href="/getdata_csv/{{ province }}/{{ city }}">生成csv文件</a></h1>
+{#<br>#}
+{#{{ list }}#}
+<br>
+<h2>列出部分房价：（元/平方米）</h2>
+{% for val in list %}
+
+    {{ val }}
+{#    {{ val|cut:"元/平" }}#}
+    {% if forloop.counter|divisibleby:"15" %}
+    <br>
+    {% endif %}
+    {% empty %}
+    <h3>当前无房价数据！</h3>
+{% endfor %}
+<h3 align="center">房价平均值为{{ Ave.0 }}</h3><br>
+{#<h3>房价总和为{{ sum }}</h3>#}
+{#<h3>csv test</h3>#}
+<img src="二手房数据图片/北京.png">
+</body>
+</html>

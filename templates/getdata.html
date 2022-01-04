@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ province }}{{ city }}二手房数据爬取</title>
+    <link rel="stylesheet" href="{% static 'css/getdata_css.css' %}">
+</head>
+<body bgcolor="#87cefa">
+<div ><a href="/getdata_csv/{{ province }}/{{ city }}" target="_blank" class="c1">生成csv文件</a></div><br>
+<div class="c2">
+<h2 align="center">列出部分房价：（元/平方米）</h2>
+    <h3 align="center" class="c4">地区(市名缩写:区名缩写)：{{ province }}:{{ city }}</h3>
+    <h3 align="center">房价平均值为: {{ Ave.0 }}</h3><br>
+<table border="1" bgcolor="#ffffe0" align="center">
+{% for val in list %}
+    <td>{{ val }}</td>
+    {% if forloop.counter|divisibleby:"15" %}
+        </tr><tr>
+    {% endif %}
+    {% empty %}
+    <h3>当前无房价数据！</h3>
+{% endfor %}
+</table>
+</div>
+<div class = "c3" align="center">
+<h1 align="center" class="c5">全国各省会地区房价平均值表</h1><br>
+<img src="{% static '二手房数据图片/北京.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/成都.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/福州.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/广州.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/贵阳.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/哈尔滨.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/海口.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/杭州.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/合肥.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/呼和浩特.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/济南.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/昆明.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/拉萨.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/兰州.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/南昌.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/南京.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/南宁.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/上海.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/石家庄.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/太原.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/天津.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/乌鲁木齐.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/武汉.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/西安.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/西宁.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/银川.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/长春.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/长沙.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/郑州.png' %}" width="900" height="500">
+<img src="{% static '二手房数据图片/重庆.png' %}" width="900" height="500">
+</div>
+</body>
+</html>

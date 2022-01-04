@@ -1,0 +1,96 @@
+
+.c1{
+            position: absolute;
+            top:15%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 200px;
+            height: 60px;
+            text-align: center;
+            line-height: 60px;
+            color:#fff;
+            font-size: 24px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: sans-serif;
+            box-sizing: border-box;
+            background: linear-gradient(90deg,#ff7b00,#ffae00,#ffe600,#ff7b00);
+            background-size: 400%;
+            border-radius: 30px;
+            /* opacity: 0.9; */
+        }
+.c1:hover{
+
+            animation:animate 8s linear infinite;
+        }
+.c1:before{
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            z-index: -1;
+            background: linear-gradient(90deg,#ff7b00,#ffae00,#ffe600,#ff7b00);
+            background-size: 400%;
+            border-radius: 40px;
+            opacity: 0;
+            transition: 0.5s;
+
+        }
+        .c1:hover:before{
+            filter: blur(60px);
+            opacity: 1;
+        }
+.c2{
+    position : absolute;
+    top:20%;
+    left: 10%;
+        }
+.c3{
+    position:absolute;
+    top:70%;
+}
+/*.c4{*/
+/*            position: absolute;*/
+/*            top:25%;*/
+/*            left: 90%;*/
+/*            transform: translate(-50%,-50%);*/
+/*            width: 200px;*/
+/*            height: 60px;*/
+/*            text-align: center;*/
+/*            line-height: 60px;*/
+/*            color:#fff;*/
+/*            font-size: 24px;*/
+/*            text-transform: uppercase;*/
+/*            text-decoration: none;*/
+/*            font-family: sans-serif;*/
+/*            box-sizing: border-box;*/
+/*            background: linear-gradient(90deg,#ff0000,#ff7b00,#f8d300,#ff0000);*/
+/*            background-size: 400%;*/
+/*            border-radius: 30px;*/
+/*            !* opacity: 0.9; *!*/
+/*        }*/
+/*.c4:hover{*/
+/*            animation:animate 8s linear infinite;*/
+/*        }*/
+/*.c4:before{*/
+/*            content: '';*/
+/*            position: absolute;*/
+/*            top: -5px;*/
+/*            left: -5px;*/
+/*            right: -5px;*/
+/*            bottom: -5px;*/
+/*            z-index: -1;*/
+/*            background: linear-gradient(90deg,#ff0000,#ff7b00,#f8d300,#ff0000);*/
+/*            background-size: 400%;*/
+/*            border-radius: 40px;*/
+/*            opacity: 0;*/
+/*            transition: 0.5s;*/
+
+/*        }*/
+/*        .c4:hover:before{*/
+/*            filter: blur(60px);*/
+/*            opacity: 1;*/
+
+/*        }*/
